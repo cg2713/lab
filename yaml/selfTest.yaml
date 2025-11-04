@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: selftest
+  name: selftest
+spec:
+  replicas: 20
+  selector:
+    matchLabels:
+      app: selfTest
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: selfTest
+    spec:
+      containers:
+      - image: httpd:alpine3.18
+        name: httpd
+        resources: {}
+status: {}
